@@ -37,7 +37,6 @@ def main():
 	rel = os.path.realpath(os.path.join(os.getcwd(), os.path.dirname(__file__)))
 	with open(os.path.join(rel,'secrets.json'), 'r') as f:
 		secrets = json.load(f)
-	print(secrets)
 	for label, key in sorted(secrets.items()):
 		print("{}:\t{}".format(label, get_totp_token(key)))
 
